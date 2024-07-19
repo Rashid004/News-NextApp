@@ -2,6 +2,7 @@
 
 import { DUMMY_NEWS } from "@/dummy-news";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 function NewsDetailsPage({ params }) {
@@ -15,15 +16,17 @@ function NewsDetailsPage({ params }) {
   return (
     <article className="container mx-auto px-4 py-8 max-w-3xl">
       <header className="mb-8">
-        <div className="relative w-full h-96 mb-4">
-          <Image
-            src={newsItem.image}
-            alt={newsItem.title}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
-          />
-        </div>
+        <Link href={`/news/${newsItem.slug}/image`}>
+          <div className="relative w-full h-96 mb-4">
+            <Image
+              src={newsItem.image}
+              alt={newsItem.title}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg"
+            />
+          </div>
+        </Link>
         <h1 className="text-3xl font-bold mb-2">{newsItem.title}</h1>
         <time dateTime={newsItem.date} className="text-gray-600">
           {newsItem.date}

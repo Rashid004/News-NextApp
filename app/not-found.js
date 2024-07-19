@@ -7,7 +7,7 @@ export default function NotFound() {
     <div className="max-w-3xl  bg-[#222] rounded-lg shadow-md  mx-auto  py-8 mt-36">
       <div className="flex items-center justify-center flex-col ">
         <h2 className="text-2xl md:text-3xl font-medium text-white">
-          Not Found ⛔
+          Not Found 🚨
         </h2>
         <p className="text-gray-200 text-xl">
           Could not find requested resource

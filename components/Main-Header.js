@@ -1,22 +1,29 @@
 /** @format */
 
 import Link from "next/link";
+import NavLink from "./NavLink";
 
-function MainHeader() {
+export default function MainHeader() {
   return (
-    <div>
+    <header className="flex justify-between items-center mb-8 mx-auto max-w-7xl mt-8">
+      <div className="font-['Inter',_sans-serif] text-2xl rounded">
+        <Link
+          href="/"
+          className="text-[#e1e1d7] no-underline hover:text-[#e1e1d7] "
+        >
+          NextNews
+        </Link>
+      </div>
       <nav>
-        <ul className="flex items-center justify-center gap-2 text-gray-500">
+        <ul className="flex gap-8 font-bold">
           <li>
-            <Link href="/">Home</Link>
+            <NavLink href="/news">News</NavLink>
           </li>
           <li>
-            <Link href="/news">News</Link>
+            <NavLink href="/archive">Archive</NavLink>
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 }
-
-export default MainHeader;
